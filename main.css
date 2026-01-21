@@ -15,12 +15,14 @@ main {
     flex-direction: column;
     
 }
-
+    /* Cabeçalho */
 header{
     /* fonte header*/
     font-size: .5rem;
-    background-color: rgb(254 255 255);
     color: white;
+
+    /* layout header*/
+    background-color: rgb(254 255 255);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -41,10 +43,16 @@ header img {
 }
 
 
-.sectionInicial{
 
+
+/* conteudo principal */
+/* tela inicial */
+.sectionInicial{
+    /* fonte section inicial */
     font-size: .7rem;
     color: hsl(225.65deg 88.46% 10.2%);
+
+    /* layout section inicial */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,13 +62,16 @@ header img {
     padding: 0rem 1rem .5rem 1rem;
     border: none solid black;
     border-radius: 0 0 1rem 1rem;
-
     box-shadow: 0px 7px 12px -1px rgba(0,0,0,0.33);
 }
 
-
+/* tela calculadora */
 .sectionCalculadora {
+
+    /* fonte section calculadora */
     font-size: 1rem;
+
+    /* layout section calculadora */
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -75,10 +86,14 @@ header img {
     transition: background-color 0.3s ease, transform 0.3s ease-out;
 }
 
+/* botao voltar */
 .voltarBtn {
-    margin-top: 1rem;
+    /* fonte botao voltar */
     text-decoration: none;
     color: hsl(223.59deg 58.79% 39.02%);
+
+    /* layout botao voltar */
+    margin-top: 1rem;
     border: .09rem solid hsla(224, 59%, 39%, 0.281);
     border-radius: .3rem .3rem;
     padding: .2rem .3rem;
@@ -86,17 +101,21 @@ header img {
     transition: background-color 0.3s ease, transform 0.3s ease-out;
 }
 
+/* efeito hover botao voltar */
 .voltarBtn:hover {
     transition: .3s ease-out;
     transform: scale(1.04);
 }
 
+/* titulos seções */
 section h2 {
     font-size: 1.2rem;
     color: rgb(1 41 111);
     margin-bottom: .5rem;
 }   
 
+
+/* navegação tela inicial*/
 nav {
     display: flex;
     justify-content: center;
@@ -105,31 +124,39 @@ nav {
     padding: .5rem 0;
 }
 
+/* links navegação */
 nav a {
-    display: flex;
-    justify-content: center;
+
+    /* fonte links navegação */
     text-decoration: none;
     color: rgb(255, 255, 255);
     font-size: 1rem;
+
+    /* layout links navegação */
+    display: flex;
+    justify-content: center;
     margin: .3rem;
-    padding: .3rem 1rem;
+    padding: .3rem .3rem;
     border-radius: .4rem;
     background-color: rgb(1 41 111);
     width: 100%;
     transition: background-color .5s ease-in-out, transform .3s ease-in-out;
 }
 
+/* efeito hover links navegação */
 nav a:hover {
     background-color: rgb(0, 56, 151);
     transition: .3s ease-in-out;
     transform: scale(1.05);
 }
 
+/* inputs calculadora */
 .inputCalculadora {
     color: hsl(225.65deg 88.46% 10.2%);
     
 }
 
+/* estilo dos inputs */
 .inputCalculadora input {
     margin-top: .3rem;
     margin-bottom: .8rem;
@@ -139,11 +166,13 @@ nav a:hover {
     width: 100%;
 }
 
+/* placeholder dos inputs */
 .inputCalculadora input::placeholder {
     color: hsl(225.65deg 88.46% 10.2%);
     opacity: 0.5;
 }
 
+/* botao calcular */
 .CalcularBtn {
     background-color: rgb(1 41 111);
     color: white;
@@ -158,19 +187,25 @@ nav a:hover {
     transition: background-color .5s ease-in-out, transform .3s ease-in-out;
 }
 
+/* efeito hover botao calcular */
 .CalcularBtn:hover {
     background-color: rgb(0, 56, 151);
     transition: .3s ease-in-out;
     transform: scale(1.02);
 }
 
+/* resultado calculadora */
 .mostrarResultado {
 
     color: hsl(128, 76%, 33%);
 }
 
-
-
 .mediaBaixa {
     color: hsl(0, 76%, 33%);
+}
+
+@media screen and (min-width: 800px) {
+  .container {
+    margin: 1em 2em;
+  }
 }
