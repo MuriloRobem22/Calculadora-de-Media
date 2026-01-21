@@ -29,7 +29,8 @@ mediaFinal.addEventListener("keydown", function (event) {
             calcularMediaExame();
         }
         else {
-            alert("Por favor, preencha ambos os campos de nota antes de pressionar Enter.");
+            mostrarResultado.innerHTML = "<p class='mediaBaixa' id='resultadoIntervalo'> Por favor, preencha ambos os campos de nota antes de pressionar Enter. </p>";
+
         }
     }
 
@@ -41,7 +42,8 @@ notaExame.addEventListener("keydown", function (event) {
             calcularMediaExame();
         }
         else {
-            alert("Por favor, preencha ambos os campos de nota antes de pressionar Enter.");
+            mostrarResultado.innerHTML = "<p class='mediaBaixa' id='resultadoIntervalo'> Por favor, preencha ambos os campos de nota antes de pressionar Enter. </p>";
+
         }
     }
 

@@ -18,31 +18,30 @@ function calcularMediaRegular() {
         mostrarResultado.innerHTML = "<p class='mediaBaixa' id='resultadoIntervalo'> Infelizmente você foi reprovado com média: " + mediaRegular.toFixed(1) + "</p>";
     }
 
-    
+
 }
 
-    resultadoRegular.addEventListener("click", calcularMediaRegular);
-    notaAtividades.addEventListener("keydown", function(event) 
-        {   
-            if (event.key === "Enter") 
-                {
-                    if (notaProva.value !== "" && notaAtividades.value !== ""){
-                calcularMediaRegular();}
-                else {
-                alert("Por favor, preencha ambos os campos de nota antes de pressionar Enter.");
-            }
-                }
-            
-        });
-    notaProva.addEventListener("keydown", function(event) 
-                {   
-            if (event.key === "Enter") 
-                {
-                    if (notaProva.value !== "" && notaAtividades.value !== ""){
-                calcularMediaRegular();}
-                else {
-                alert("Por favor, preencha ambos os campos de nota antes de pressionar Enter.");
-            }
-                }
-            
-        });
+resultadoRegular.addEventListener("click", calcularMediaRegular);
+notaAtividades.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        if (notaProva.value !== "" && notaAtividades.value !== "") {
+            calcularMediaRegular();
+        }
+        else {
+            mostrarResultado.innerHTML = "<p class='mediaBaixa' id='resultadoIntervalo'> Por favor, preencha ambos os campos de nota antes de pressionar Enter. </p>";
+        }
+    }
+
+});
+notaProva.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        if (notaProva.value !== "" && notaAtividades.value !== "") {
+            calcularMediaRegular();
+        }
+        else {
+            mostrarResultado.innerHTML = "<p class='mediaBaixa' id='resultadoIntervalo'> Por favor, preencha ambos os campos de nota antes de pressionar Enter. </p>";
+
+        }
+    }
+
+});
