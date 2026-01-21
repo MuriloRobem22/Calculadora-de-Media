@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Calculadora de Media Univesp</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel="shortcut icon" href="./imagens/unifav.png" type="image/x-icon">
+    <script src='mediaExame.js' defer></script>
+</head>
+
+<body>
+    <main>
+        <header>
+            <h1>
+                Calculadora de média
+            </h1>
+            <img src="./imagens/Univesp_logo_png.png" alt="Simbolo da univesp">
+        </header>
+
+        <section class="sectionCalculadora">
+            <a href="./index.html" class="voltarBtn"> Voltar </a>
+            <h2> Média Exame</h2>
+            <div class="inputCalculadora">
+                <p>Nota Media Regular (50%):</p>
+                <input type="number" id="mediaFinal" placeholder="Ex: 4.5">
+                <p>Nota do exame (50%):</p>
+                <input type="number" id="notaExame" placeholder="Ex: 9.0">
+            </div>
+            <button type="button" id="resultadoExame" class="CalcularBtn">Calcular</button>
+
+            <div id="mostrarResultadoExame" class="mostrarResultado">
+
+            </div>
+
+        </section>
+    </main>
+</body>
+
+</html>
