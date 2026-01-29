@@ -23,35 +23,34 @@ function calcularMediaExame() {
         hora: new Date().toLocaleTimeString(),
     };
 
-    
-    
-    //adicionando o valor do imput na lista
-    historico.push(registro);
-    //mandando o valor para o localstorage
-    localStorage.setItem('mediaExameStorage', JSON.stringify(historico))
-
-    
-
     if (mediaExame >= 5.0) {
         mostrarResultado.innerHTML = "<p> Parabéns! Você foi aprovado com média: " + mediaExame.toFixed(1) + "</p>";
-    } 
-else if (isNaN(mediaExame) || mediaExame == null) { 
-    mostrarResultado.innerHTML = 
-    "<p class='mediaBaixa' id='resultadoIntervalo'> Por favor, preencha ambos os campos de nota antes de pressionar Enter. </p>"; 
-}
+        //adicionando o valor do imput na lista
+        historico.push(registro);
+        //mandando o valor para o localstorage
+        localStorage.setItem('mediaExameStorage', JSON.stringify(historico))
+    }
+    else if (isNaN(mediaExame) || mediaExame == null) {
+        mostrarResultado.innerHTML =
+            "<p class='mediaBaixa' id='resultadoIntervalo'> Por favor, preencha ambos os campos de nota antes de pressionar Enter. </p>";
+    }
     else {
         mostrarResultado.innerHTML = "<p class='mediaBaixa'> Infelizmente você foi reprovado com média: " + mediaExame.toFixed(1) + "</p>";
+        //adicionando o valor do imput na lista
+        historico.push(registro);
+        //mandando o valor para o localstorage
+        localStorage.setItem('mediaExameStorage', JSON.stringify(historico))
     }
 
-historico.forEach((registro, index) => { 
-    let resultado = registro.media >= 5.0 ? "Foi aprovado" : "Foi reprovado"
-    console.log(`Cálculo ${index + 1}: 
+    historico.forEach((registro, index) => {
+        let resultado = registro.media >= 5.0 ? "Foi aprovado" : "Foi reprovado"
+        console.log(`Cálculo ${index + 1}: 
         Média = ${registro.media}
         Data = ${registro.data}
         Hora = ${registro.hora}
         resultado = ${resultado}`
-    ); 
-});
+        );
+    });
 
 
 }
@@ -60,17 +59,17 @@ resultadoExame.addEventListener("click", calcularMediaExame);
 
 mediaFinal.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
-        
-            calcularMediaExame();
- 
-        }
+
+        calcularMediaExame();
+
     }
+}
 
 );
 
 notaExame.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
-        
-            calcularMediaExame();
+
+        calcularMediaExame();
     }
 });

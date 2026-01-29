@@ -19,41 +19,40 @@ function calcularMediaRegular() {
         hora: new Date().toLocaleTimeString(),
     };
 
-    //adicionando o valor do imput na lista
-    historico.push(registro);
-    //mandando o valor para o localstorage
-    localStorage.setItem('mediaRegularStorage', JSON.stringify(historico))
-
 
     if (mediaRegular >= 5.0) {
         mostrarResultado.innerHTML = "<p> Parabéns! Você foi aprovado com média: " + mediaRegular.toFixed(1) + "</p>";
-    } 
-    else if (isNaN(mediaRegular) || mediaRegular == null) { 
-    mostrarResultado.innerHTML = 
-    "<p class='mediaBaixa' id='resultadoIntervalo'> Por favor, preencha ambos os campos de nota antes de pressionar Enter. </p>"; 
-}
+        historico.push(registro);
+        localStorage.setItem('mediaRegularStorage', JSON.stringify(historico))
+    }
+    else if (isNaN(mediaRegular) || mediaRegular == null) {
+        mostrarResultado.innerHTML =
+            "<p class='mediaBaixa' id='resultadoIntervalo'> Por favor, preencha ambos os campos de nota antes de pressionar Enter. </p>";
+    }
     else {
         mostrarResultado.innerHTML = "<p class='mediaBaixa' id='resultadoIntervalo'> Infelizmente você foi reprovado com média: " + mediaRegular.toFixed(1) + "</p>";
+        historico.push(registro);
+        localStorage.setItem('mediaRegularStorage', JSON.stringify(historico))
     }
 
 
-    historico.forEach((registro, index) => { 
-    let resultado = registro.media >= 5.0 ? "Foi aprovado" : "Foi reprovado"
-    console.log(`Cálculo ${index + 1}: 
+    historico.forEach((registro, index) => {
+        let resultado = registro.media >= 5.0 ? "Foi aprovado" : "Foi reprovado"
+        console.log(`Cálculo ${index + 1}: 
         Média = ${registro.media}
         Data = ${registro.data}
         Hora = ${registro.hora}
         resultado = ${resultado}`
-    ); 
-});
+        );
+    });
 
 }
 
 resultadoRegular.addEventListener("click", calcularMediaRegular);
 notaAtividades.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
- 
-            calcularMediaRegular();
+
+        calcularMediaRegular();
 
     }
 
@@ -61,8 +60,8 @@ notaAtividades.addEventListener("keydown", function (event) {
 notaProva.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
 
-            calcularMediaRegular();
-    
+        calcularMediaRegular();
+
 
     }
 
