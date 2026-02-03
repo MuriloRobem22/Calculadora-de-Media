@@ -193,7 +193,7 @@ nav a:hover {
     width: 100%;
     margin-top: .5rem;
     font-weight: bold;
-    transition: background-color .5s ease-in-out, transform .3s ease-in-out;
+    transition: background-color .3s ease-in-out, transform .3s ease-in-out;
 }
 
 /* efeito hover botao calcular */
@@ -213,6 +213,31 @@ nav a:hover {
     color: hsl(0, 76%, 33%);
 }
 
+
+
+.listaHistorico li {
+    border-radius: .1rem;
+    list-style-type: none;
+    white-space: pre-line;
+    padding: 1rem 1rem;
+    margin-top: 1rem;
+    border-top: .1rem solid hsla(224, 59%, 39%, 0.568);
+    transition: background-color .2s ease-in-out, transform .3s ease-in-out;
+}
+
+.listaHistorico li:nth-child(odd) {
+    background-color: rgb(240 248 255);
+}
+
+.listaHistorico li:hover {
+    background-color: rgb(240 248 255);
+    border-top: .1rem solid hsl(224, 59%, 39%);
+    transform: scale(1.02);
+}
+
+
+
+/* rodapé */
 
 footer {
     text-align: center;

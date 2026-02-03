@@ -5,7 +5,7 @@ let mediaFinal = document.getElementById("mediaFinal");
 let mostrarResultado = document.getElementById("mostrarResultadoExame");
 let historico = JSON.parse(localStorage.getItem('mediaExameStorage')) || [];
 let puxarHistorico = JSON.parse(localStorage.getItem('mediaExameStorage'))
-
+let listaHExame = document.getElementById("listaHistoricoExame");
 // Media Exame Função//
 
 
@@ -26,7 +26,7 @@ function calcularMediaExame() {
     if (mediaExame >= 5.0) {
         mostrarResultado.innerHTML = "<p> Parabéns! Você foi aprovado com média: " + mediaExame.toFixed(1) + "</p>";
         //adicionando o valor do imput na lista
-        historico.push(registro);
+        historico.unshift(registro);
         //mandando o valor para o localstorage
         localStorage.setItem('mediaExameStorage', JSON.stringify(historico))
     }
@@ -37,23 +37,44 @@ function calcularMediaExame() {
     else {
         mostrarResultado.innerHTML = "<p class='mediaBaixa'> Infelizmente você foi reprovado com média: " + mediaExame.toFixed(1) + "</p>";
         //adicionando o valor do imput na lista
-        historico.push(registro);
+        historico.unshift(registro);
         //mandando o valor para o localstorage
         localStorage.setItem('mediaExameStorage', JSON.stringify(historico))
     }
 
-    historico.forEach((registro, index) => {
+    listaHExame.innerHTML = " "
+
+    historico.forEach((registro) => {
         let resultado = registro.media >= 5.0 ? "Foi aprovado" : "Foi reprovado"
-        console.log(`Cálculo ${index + 1}: 
-        Média = ${registro.media}
-        Data = ${registro.data}
-        Hora = ${registro.hora}
-        resultado = ${resultado}`
-        );
+
+        let listaHistoricoExame = document.createElement("li");
+        listaHistoricoExame.textContent =
+            `Cálculo ${registro.data}:
+
+                Média = ${registro.media}
+                resultado = ${resultado}
+                Hora = ${registro.hora}`;
+        listaHExame.appendChild(listaHistoricoExame);
+
+
     });
 
-
 }
+
+historico.forEach((registro) => {
+    let resultado = registro.media >= 5.0 ? "Foi aprovado" : "Foi reprovado"
+
+    let listaHistoricoExame = document.createElement("li");
+    listaHistoricoExame.textContent =
+        `Cálculo ${registro.data}:
+
+                Média = ${registro.media}
+                resultado = ${resultado}
+                Hora = ${registro.hora}`;
+    listaHExame.appendChild(listaHistoricoExame);
+
+
+});
 
 resultadoExame.addEventListener("click", calcularMediaExame);
 
