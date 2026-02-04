@@ -15,10 +15,11 @@ main {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    
+
 }
-    /* Cabeçalho */
-header{
+
+/* Cabeçalho */
+header {
     /* fonte header*/
     font-size: .5rem;
     color: white;
@@ -31,7 +32,7 @@ header{
     width: 160%;
     padding: 0rem 1rem;
     border-radius: 1rem 1rem 0 0;
-    box-shadow: 0px 6px 12px -1px rgba(0,0,0,0.33);
+    box-shadow: 0px 6px 12px -1px rgba(0, 0, 0, 0.33);
 }
 
 header h1 {
@@ -49,7 +50,7 @@ header img {
 
 /* conteudo principal */
 /* tela inicial */
-.sectionInicial{
+.sectionInicial {
     /* fonte section inicial */
     font-size: .7rem;
     color: hsl(225.65deg 88.46% 10.2%);
@@ -64,7 +65,7 @@ header img {
     padding: 0rem 1rem .5rem 1rem;
     border: none solid black;
     border-radius: 0 0 1rem 1rem;
-    box-shadow: 0px 7px 12px -1px rgba(0,0,0,0.33);
+    box-shadow: 0px 7px 12px -1px rgba(0, 0, 0, 0.33);
 }
 
 /* tela calculadora */
@@ -84,7 +85,7 @@ header img {
     border: none solid black;
     border-radius: 0 0 1rem 1rem;
     padding: 0rem 1rem 1rem 1rem;
-    box-shadow: 0px 7px 12px -1px rgba(0,0,0,0.33);
+    box-shadow: 0px 7px 12px -1px rgba(0, 0, 0, 0.33);
     transition: background-color 0.3s ease, transform 0.3s ease-out;
 }
 
@@ -100,7 +101,7 @@ header img {
     border: .09rem solid hsla(224, 59%, 39%, 0.281);
     border-radius: .3rem .3rem;
     padding: .2rem .3rem;
-    box-shadow: 0px 0px 12px -1px rgba(0,0,0,0.23);
+    box-shadow: 0px 0px 12px -1px rgba(0, 0, 0, 0.23);
     transition: background-color 0.3s ease, transform 0.3s ease-out;
 }
 
@@ -115,7 +116,7 @@ section h2 {
     font-size: 1.2rem;
     color: rgb(1 41 111);
     margin-bottom: .5rem;
-}   
+}
 
 
 /* navegação tela inicial*/
@@ -133,6 +134,7 @@ nav ul {
     margin: 0;
     width: 100%;
 }
+
 /* links navegação */
 nav a {
 
@@ -159,10 +161,17 @@ nav a:hover {
     transform: scale(1.05);
 }
 
+nav a:active {
+
+    background-color: rgb(0, 56, 151);
+    transition: .3s ease-in-out;
+    transform: scale(1.05);
+}
+
 /* inputs calculadora */
 .inputCalculadora {
     color: hsl(225.65deg 88.46% 10.2%);
-    
+
 }
 
 /* estilo dos inputs */
@@ -201,6 +210,10 @@ nav a:hover {
     background-color: rgb(0, 56, 151);
     transition: .3s ease-in-out;
     transform: scale(1.02);
+}
+
+a {
+    -webkit-tap-highlight-color: transparent;
 }
 
 /* resultado calculadora */
@@ -248,7 +261,7 @@ footer {
 }
 
 @media screen and (min-width: 800px) {
-  
+
     main {
         margin: 8% 25%;
         width: 50%;
@@ -259,14 +272,20 @@ footer {
         width: 70%;
     }
 
-    .sectionInicial{
+    .sectionInicial {
         width: 70%;
     }
-    .sectionCalculadora{
+
+    .sectionCalculadora {
         width: 70%;
     }
 
     .CalcularBtn {
         width: 57.5%;
     }
+
+    a {
+        -webkit-tap-highlight-color: hsl(224, 59%, 39%);
+    }
+
 }

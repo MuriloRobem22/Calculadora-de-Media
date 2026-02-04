@@ -4,14 +4,12 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Calcular Média Regular UNIVESP — Resultado Rápido</title>
+    <title>Simular Média Final de Exame UNIVESP — Descubra sua Aprovação</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <meta name="description"
-        content="Calcule sua média regular da UNIVESP de forma rápida e prática. Descubra se você foi aprovado.">
+    <meta name="description" content="Simule diferentes notas e calcule sua média de exame na UNIVESP. Planeje seu desempenho acadêmico.">
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <link rel="shortcut icon" href="./imagens/unifav.png" type="image/x-icon">
-
-    <script src='main.js' defer></script>
+    <script src='SimulacaoExame.js' defer></script>
 </head>
 
 <body>
@@ -23,17 +21,16 @@
             <img src="./imagens/Univesp_logo_png.png" alt="Simbolo da univesp">
         </header>
 
-        <section class="sectionCalculadora">
+
+       <section class="sectionCalculadora">
             <a href="./index.html" class="voltarBtn"> &lt; Voltar </a>
-            <h2> Média Regular</h2>
+            <h2> Simulação de Média com Exame</h2>
             <div class="inputCalculadora">
-                <p>Nota da prova regular (60%):</p>
-                <input type="number" id="notaProva" placeholder="Ex: 8.0">
-                <p>Nota das atividades (40%):</p>
-                <input type="number" id="notaAtividades" placeholder="Ex: 7.5">
+                <p>Nota média regular:</p>
+                <input type="number" id="notaMediaFinal" placeholder="Ex: 4.5">
 
             </div>
-            <button type="button" id="resultadoRegular" class="CalcularBtn">Calcular</button>
+            <button type="button" id="simularMediaBtn" class="CalcularBtn">Calcular</button>
 
             <div id="mostrarResultado" class="mostrarResultado"></div>
 
@@ -41,8 +38,8 @@
 
         </section>
 
-
     </main>
+
     <footer>
         <p>Desenvolvido por Murilo Roberto - 2026</p>
     </footer>
